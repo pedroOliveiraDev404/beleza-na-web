@@ -61,14 +61,14 @@ importers:
         specifier: ^15.10.2
         version: 15.11.7
       typescript:
-        specifier: ^4.9.4
-        version: 4.9.5
+        specifier: ^5.8.3
+        version: 5.8.3
       vite:
         specifier: ^4.5.14
         version: 4.5.14(@types/node@22.15.19)
       vite-tsconfig-paths:
         specifier: ^4.0.3
-        version: 4.3.2(typescript@4.9.5)(vite@4.5.14(@types/node@22.15.19))
+        version: 4.3.2(typescript@5.8.3)(vite@4.5.14(@types/node@22.15.19))
       vitest:
         specifier: ^0.25.8
         version: 0.25.8(happy-dom@15.11.7)
@@ -1189,9 +1189,9 @@ packages:
     resolution: {integrity: sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==}
     engines: {node: '>=4'}
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   undici-types@6.21.0:
@@ -2471,13 +2471,13 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  tsconfck@3.1.5(typescript@4.9.5):
+  tsconfck@3.1.5(typescript@5.8.3):
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.8.3
 
   type-detect@4.1.0: {}
 
-  typescript@4.9.5: {}
+  typescript@5.8.3: {}
 
   undici-types@6.21.0: {}
 
@@ -2493,11 +2493,11 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
 
-  vite-tsconfig-paths@4.3.2(typescript@4.9.5)(vite@4.5.14(@types/node@22.15.19)):
+  vite-tsconfig-paths@4.3.2(typescript@5.8.3)(vite@4.5.14(@types/node@22.15.19)):
     dependencies:
       debug: 4.4.1
       globrex: 0.1.2
-      tsconfck: 3.1.5(typescript@4.9.5)
+      tsconfck: 3.1.5(typescript@5.8.3)
     optionalDependencies:
       vite: 4.5.14(@types/node@22.15.19)
     transitivePeerDependencies:
