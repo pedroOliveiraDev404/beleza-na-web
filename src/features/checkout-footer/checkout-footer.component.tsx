@@ -1,24 +1,48 @@
-import { useFormContext, useWatch } from 'react-hook-form';
+import { useWatch } from 'react-hook-form';
+import { PriceItem } from '../../ui/price-item/price-item.component';
+import { CheckoutStepEnum, CheckoutSteps } from '../../widgets/checkout/useCheckoutForm';
+import './checkout-footer.styles.css';
+import clsx from 'clsx';
 
-export const CheckoutFooter = () => {
-  const { setValue, handleSubmit } = useFormContext();
-  const currentStep = useWatch({ name: 'step' });
+interface CheckoutSummaryProps {
+  totalWithoutFreight: number;
+  shippingTotal: number;
+  discount: number;
+  total: number;
+  itemCount: number;
+  onProceed: () => void;
+  currentStep: CheckoutSteps
+}
 
-  const handleNext = () => {
-    if (currentStep === 'cart') return setValue('step', 'payment');
-    if (currentStep === 'payment') return setValue('step', 'confirmation');
-  };
+const STEP_BUTTON_LABELS: Record<CheckoutStepEnum, string> = {
+  [CheckoutStepEnum.CART]: "Seguir para o pagamento",
+  [CheckoutStepEnum.PAYMENT]: "Finalizar pedido",
+  [CheckoutStepEnum.CONFIRMATION]: "Voltar ao inicio do protótipo",
+};
 
+export const CheckoutFooter = ({
+  totalWithoutFreight,
+  shippingTotal,
+  discount,
+  total,
+  itemCount,
+  currentStep,
+  onProceed,
+}: CheckoutSummaryProps) => {
+  const isConfirmation = currentStep === CheckoutStepEnum.CONFIRMATION
   return (
-    <footer className="p-4">
-      {currentStep !== 'confirmation' && (
-        <button
-          className="w-full py-2 bg-purple-600 text-white rounded"
-          onClick={handleSubmit(handleNext)}
-        >
-          {currentStep === 'cart' ? 'Seguir para pagamento' : 'Finalizar pedido'}
+    <footer className="footer">
+      <div className="summary">
+        <PriceItem title={`Produtos: (${itemCount}) itens`} price={totalWithoutFreight.toFixed(2)} />
+        <PriceItem title="Frete:" price={shippingTotal.toFixed(2)} />
+        <PriceItem title="Desconto:" price={discount.toFixed(2)} isDiscount />
+        <PriceItem title="Subtotal" price={total.toFixed(2)} />
+
+
+        <button className={clsx('button', { confirmation: isConfirmation })} onClick={onProceed}>
+          {STEP_BUTTON_LABELS[currentStep]}
         </button>
-      )}
+      </div>
     </footer>
   );
 };

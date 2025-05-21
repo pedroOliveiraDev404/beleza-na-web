@@ -1,6 +1,13 @@
 import { useFormContext, useWatch } from "react-hook-form";
+import { CheckoutStepEnum, CheckoutSteps } from "../../widgets/checkout/useCheckoutForm";
 import { TabItem } from "../../ui/tab-item/tab-item.component";
-import './checkout-header.css'
+
+import './checkout-header.styles.css'
+
+interface CheckoutHeaderProps {
+  handleTab: (key: CheckoutStepEnum) => void;
+  currentStep: CheckoutSteps
+}
 
 const steps: { key: any; label: string }[] = [
   { key: 'cart', label: 'Sacola' },
@@ -8,14 +15,15 @@ const steps: { key: any; label: string }[] = [
   { key: 'confirmation', label: 'Confirmação' },
 ];
 
-export const CheckoutHeader = () => {
-  const { setValue } = useFormContext();
-  const currentStep = useWatch({ name: 'step' });
+export const CheckoutHeader = ({
+  handleTab,
+  currentStep
+}: CheckoutHeaderProps) => {
   return (
     <header className="header">
       <div className="header-container">
         {steps.map(({ key, label }) => (
-          <TabItem label={label} isCurrentTab={currentStep === key} onClick={() => setValue('step', key)} key={key} />
+          <TabItem label={label} isCurrentTab={currentStep === key} onClick={() => handleTab(key)} key={key} />
         ))}
       </div>
     </header>
