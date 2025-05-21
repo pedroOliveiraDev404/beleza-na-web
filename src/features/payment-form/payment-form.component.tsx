@@ -33,7 +33,7 @@ export const PaymenteForm: React.FC<BagProductListProps> = () => {
         placeholder="Nome impresso no cartão"
         label={'Nome do titular do cartão'}
       />
-      <div className='row'>
+      <div className='section'>
         <ControlledInput
           control={control}
           errorMessage={errors.payment?.expiryDate?.message}
