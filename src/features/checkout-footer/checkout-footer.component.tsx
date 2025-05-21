@@ -1,4 +1,3 @@
-import { useWatch } from 'react-hook-form';
 import { PriceItem } from '../../ui/price-item/price-item.component';
 import { CheckoutStepEnum, CheckoutSteps } from '../../widgets/checkout/useCheckoutForm';
 import './checkout-footer.styles.css';

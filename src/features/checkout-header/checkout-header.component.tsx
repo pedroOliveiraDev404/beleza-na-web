@@ -1,4 +1,3 @@
-import { useFormContext, useWatch } from "react-hook-form";
 import { CheckoutStepEnum, CheckoutSteps } from "../../widgets/checkout/useCheckoutForm";
 import { TabItem } from "../../ui/tab-item/tab-item.component";
 

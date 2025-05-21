@@ -1,4 +1,3 @@
-import { useWatch } from 'react-hook-form';
 import { BagProductResponse } from '../../services/bag-products/bag-products.services.types';
 import { BagProductList } from '../bag-product-list/bag-product-list.component';
 
