@@ -11,15 +11,15 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.0.1",
-    "@tanstack/react-query": "^5.76.1",
+    "@hookform/resolvers": "^5.1.0",
+    "@tanstack/react-query": "^5.80.6",
     "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.56.4",
+    "react-hook-form": "^7.57.0",
     "react-input-mask": "^2.0.4",
-    "react-router-dom": "^7.6.0",
-    "zod": "^3.25.7"
+    "react-router-dom": "^7.6.2",
+    "zod": "^3.25.56"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
